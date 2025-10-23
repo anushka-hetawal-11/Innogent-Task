@@ -1,0 +1,23 @@
+stages:
+  - build
+  - test
+
+variables:
+  MAVEN_CLI_OPTS: "-B -V"
+
+build:
+  stage: build
+  image: maven:3.9.1-eclipse-temurin-17
+  script:
+    - echo "Building project..."
+    - mvn clean package $MAVEN_CLI_OPTS
+  artifacts:
+    paths:
+      - target/*.jar
+
+test:
+  stage: test
+  image: maven:3.9.1-eclipse-temurin-17
+  script:
+    - echo "Running tests..."
+    - mvn test $MAVEN_CLI_OPTS
