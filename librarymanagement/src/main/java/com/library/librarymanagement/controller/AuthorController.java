@@ -37,4 +37,9 @@ public class AuthorController {
     public ResponseEntity<AuthorResponseDTO> updateAuthor(@PathVariable Long id, @RequestBody AuthorRequestDTO authorRequestDTO){
         return ResponseEntity.ok(authorService.updateAuthor(id, authorRequestDTO));
     }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<void> deleteAuthor(@PathVariable Long id){
+        return ResponseEntity()authorService.deleteAuthor(id);
+    }
 }
