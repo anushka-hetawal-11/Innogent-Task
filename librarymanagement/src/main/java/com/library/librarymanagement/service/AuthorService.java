@@ -77,6 +77,14 @@ public class AuthorService {
 
     @Transactional
     public void deleteAuthor(Long id){
-         authorRepository.deleteById(id);
+        Author author = authorRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Author not found with id: "+id));
+
+        if(!author.getBooks().isEmpty()) {
+            throw new RuntimeException("Cannot delete author: Books are still assigned!");
+        }
+
+        authorRepository.delete(author);
     }
+
 }

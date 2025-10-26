@@ -3,6 +3,9 @@ package com.library.librarymanagement.entity;
 import jakarta.persistence.*;
 import lombok.Data;
 
+import java.util.HashSet;
+import java.util.Set;
+
 @Entity
 @Data
 public class Book {
@@ -16,6 +19,9 @@ public class Book {
     @ManyToOne
     @JoinColumn(name = "author_id")
     private Author author;
+
+    @ManyToMany(mappedBy = "borrowedBooks")
+    private Set<Member> members = new HashSet<>();
 
 
 }

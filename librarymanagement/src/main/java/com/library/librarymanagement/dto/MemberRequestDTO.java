@@ -12,6 +12,5 @@ import java.util.Set;
 public class MemberRequestDTO {
 
     private String name;
-    private String email;
     private Set<Long> borrowedBookIds;
 }

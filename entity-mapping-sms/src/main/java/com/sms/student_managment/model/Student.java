@@ -21,7 +21,7 @@ public class Student {
     private String email;
     private String city;
 
-    @ManyToMany(fetch = FetchType.LAZY, cascade = { CascadeType.PERSIST, CascadeType.MERGE })
+    @ManyToMany(fetch = FetchType.EAGER, cascade = { CascadeType.PERSIST, CascadeType.MERGE })
     @JoinTable(
             name = "student_course",
             joinColumns = @JoinColumn(name = "student_id"),
