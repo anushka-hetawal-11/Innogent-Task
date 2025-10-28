@@ -48,7 +48,7 @@ public class MemberService {
     }
 
     @Transactional(readOnly = true)
-    public List<MemberResponseDTO> getAllMembers() {
+    public List<MemberResponseDTO> etAllMembers() {
         List<Member> members = memberRepository.findAll();
 
         return members.stream().map(member -> {
