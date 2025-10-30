@@ -43,21 +43,21 @@ public class ArrayListVsLinkedList {
 }
 
 
-/* ArrayList :
- * Insertion - zigzag pattern
+/*  Insertion:
+ * ArrayList - zigzag pattern
    ArrayList is usually faster, but performance can fluctuate due to occasional resizing.
 
- * Deletion - LinkedList is stable because doesn’t need resizing since each new node is created dynamically,
+ - LinkedList is stable because doesn’t need resizing since each new node is created dynamically,
    but each insertion has more overhead (new node object + pointers).
  */
 
 
- /* LinkedList :
-  * Insertion -
+ /* Deletion :
+  * ArrayList -
   shifts all elements one place to the left → O(n) operation.
   At 100k shifting happens 100,000 times making it very slow.
 
-  * Deletion -
+  * LinkedList -
   just changes the head pointer → O(1) operation.
   */
 
