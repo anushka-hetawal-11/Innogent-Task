@@ -258,10 +258,10 @@ public class StudentApplication {
 
     static int marksValidation() throws InvalidMarksException{
         int marks;
-        System.out.println("Enter Marks: ");
-        marks = sc.nextInt();
         while(true){
         try{
+            System.out.println("Enter Marks: ");
+            marks = sc.nextInt();
             if (marks < 0 || marks > 100){
                 throw new InvalidMarksException("Grade between 0 - 100");
             }
@@ -301,8 +301,8 @@ public class StudentApplication {
             int previousMark = -1;
             int count = 0;
             for(Student s : list) {
-                count++;
                 if (s.marks != previousMark) {
+                    count++;
                     rank = count;
                 }
                 System.out.println("Rank " + rank + " Student Name " + s.name + " Marks: " + s.marks);
